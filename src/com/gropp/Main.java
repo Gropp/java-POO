@@ -1,4 +1,5 @@
 package com.gropp;
+import com.gropp.dominio.Conteudo;
 import com.gropp.dominio.Curso;
 import com.gropp.dominio.Mentoria;
 import java.time.LocalDate;
@@ -24,6 +25,12 @@ public class Main {
         curso2.setDescricao("Introdução a Orientação a Objetos em Java");
         curso2.setCargaHoraria(16);
 
+        /*
+        * exemplo de polimorfismo
+        * como Conteudo é pai de curso eu posso instanciar um curso
+        * instanciando a classe Conteudo
+        * Conteudo curso3 = new Curso(); - Deu erro em SetCargaHoraria
+        */
         Curso curso3 = new Curso();
         curso3.setTitulo("Curso de Exceptions Java");
         curso3.setDescricao("Introdução ao Tratamento de Exceções em Java");
@@ -39,10 +46,18 @@ public class Main {
         mentoria2.setDescricao("Ajuda e reforço comm Orientacao a objetos");
         mentoria2.setData(LocalDate.now());
 
+        /*
+         * exemplo de polimorfismo
+         * como Conteudo é pai de mentoria eu posso instanciar uma mentoria
+         * instanciando a classe Conteudo
+         * Conteudo mentoria3 = new Mentoria();
+         * Deu erro na propriedade SetData
+         */
         Mentoria mentoria3 = new Mentoria();
         mentoria3.setTitulo("Mentoria Tratamento de Exceções");
         mentoria3.setDescricao("Ajuda e reforço com rotirnas de tratamento de exceções");
         mentoria3.setData(LocalDate.now());
+
 
         System.out.println(curso1);
         System.out.println(curso2);

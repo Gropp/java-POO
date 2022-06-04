@@ -6,13 +6,13 @@ import java.time.LocalDate;
  *
  * Essa classe fornece informaçoes relacionadas ao objeto mentoria
  * provendo propriedades e metodos para as demais classes
+ * classe herda a classe conteudo com propriedades comuns
+ * e a classe pai obriga as classes filhas a implementar o metodo cacularXp
  * @author Fernando Gropp, 2022
  * @see java.time.LocalDate
  */
 
-public class Mentoria {
-    private String titulo;
-    private String descricao;
+public class Mentoria extends Conteudo {
     private LocalDate data;
 
     /*
@@ -24,21 +24,6 @@ public class Mentoria {
     /*
     * getters and setters
     */
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 
     public LocalDate getData() {
         return data;
@@ -49,13 +34,24 @@ public class Mentoria {
     }
 
     /*
+    * implementando o metodo da classe pai
+    * @Override sobrescreve o metodo pai
+    * @see com.gropp.dominio.Conteudo
+    */
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20;
+    }
+
+    /*
     * tratamento do retorno da impressao
     */
     @Override
     public String toString() {
         return "Mentoria{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", data=" + data +
                 '}';
     }
