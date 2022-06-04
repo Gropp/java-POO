@@ -58,6 +58,11 @@ public class Main {
         mentoria3.setDescricao("Ajuda e reforço com rotirnas de tratamento de exceções");
         mentoria3.setData(LocalDate.now());
 
+        /*
+        *
+        * impressao dos objetos
+        *
+        */
 
         System.out.println(curso1);
         System.out.println(curso2);
