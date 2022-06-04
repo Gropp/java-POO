@@ -1,5 +1,5 @@
 package com.gropp;
-import com.gropp.dominio.Conteudo;
+
 import com.gropp.dominio.Curso;
 import com.gropp.dominio.Mentoria;
 import java.time.LocalDate;

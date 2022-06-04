@@ -2,6 +2,7 @@ package com.gropp.dominio;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 /*
@@ -26,9 +27,36 @@ public class Dev {
     * metodos do objeto DEV
     *
     */
-    public void inscreverBootcamp(Bootcamp bootcamp){}
-    public void progredir(){}
-    public void calcularXp(){}
+    public void inscreverBootcamp(Bootcamp bootcamp){
+        // coloca no Set(conjunto) e addiciona todo o conteudo do bootcamp no conjunto
+        // coloca o dev no conjunto de inscritos
+        this.conteudosInscritos.addAll(bootcamp.getConteudos());
+        bootcamp.getDevsInscritos().add(this);
+    }
+
+    public void progredir(){
+        // no conjunto de inscritos, irao ser colocados em ordem os elementos
+        // por isso o stream e o findfirst
+        // como esses metodos podem retornar nulls a clausula
+        // Optional é exigida pelo java
+        // esse metodo tira o conteudo do conjunto dos inscritos e passa para
+        // o conteudo dos concluidos
+        Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
+        if(conteudo.isPresent()) {
+            this.conteudosConcluidos.add(conteudo.get());
+            this.conteudosInscritos.remove(conteudo.get());
+        } else {
+            System.err.println("Você não esta matriculado em nenhum conteudo!");
+        }
+    }
+
+    // calcula o incremento de XP do Dev durante o Bootcamp
+    public double calcularXp(){
+        return this.conteudosConcluidos
+                .stream() //navega no conjunto
+                .mapToDouble(Conteudo::calcularXp) //mapeia todas as variaveis calculaxp
+                .sum(); //soma
+    }
 
     /*
     * criacao de getters e setter
