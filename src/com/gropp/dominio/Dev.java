@@ -5,12 +5,10 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 
-/*
- *
+/**
  * classe DEV
  * sua funcao é fornecer dadps sobre os Devs
  * @author Fernando Gropp, 2022
- *
  */
 
 public class Dev {

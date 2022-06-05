@@ -1,12 +1,10 @@
 package com.gropp.dominio;
 
-/*
-*
+/**
 * Essa classe fornece informaçoes relacionadas ao objeto curso
 * provendo propriedades e metodos para as demais classes
 * Curso herda propriedades e metodos da classe Conteudo
 * @author Fernando Gropp, 2022
-*
 */
 
 public class Curso extends Conteudo{

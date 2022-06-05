@@ -1,12 +1,9 @@
 package com.gropp.dominio;
-/*
-*
+/**
 * classe abstrata, nao pode ser instanciada
 * sua funcao é fornecer a classes filhas propriedades e metodos comuns
 * somente atraves de heranca que esse objeto podera ser acessado
-*
 * @author Fernando Gropp, 2022
-*
 */
 
 public abstract class Conteudo {

@@ -2,8 +2,7 @@ package com.gropp.dominio;
 
 import java.time.LocalDate;
 
-/*
- *
+/**
  * Essa classe fornece informaçoes relacionadas ao objeto mentoria
  * provendo propriedades e metodos para as demais classes
  * classe herda a classe conteudo com propriedades comuns

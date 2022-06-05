@@ -6,12 +6,10 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
-/*
- *
+/**
  * classe Bootcamp
  * sua funcao é fornecer dadps sobre os Bootcamps
  * @author Fernando Gropp, 2022
- *
  */
 
 public class Bootcamp {
