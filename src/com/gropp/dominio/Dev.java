@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  * classe DEV
- * sua funcao é fornecer dadps sobre os Devs
+ * sua funcao é fornecer dados sobre os Devs
  * @author Fernando Gropp, 2022
  */
 
