@@ -6,11 +6,9 @@ import com.gropp.dominio.Dev;
 import com.gropp.dominio.Mentoria;
 import java.time.LocalDate;
 
-/*
-*
+/**
 * Programa para modelar o ambiente do BootCamp
 * @author Fernando Gropp, 2022
-*
 */
 
 public class Main {
