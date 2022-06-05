@@ -51,7 +51,7 @@ public class Dev {
     }
 
     // calcula o incremento de XP do Dev durante o Bootcamp
-    public double calcularXp(){
+    public double calcularTotalXp(){
         return this.conteudosConcluidos
                 .stream() //navega no conjunto
                 .mapToDouble(Conteudo::calcularXp) //mapeia todas as variaveis calculaxp

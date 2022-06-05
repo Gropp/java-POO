@@ -1,6 +1,8 @@
 package com.gropp;
 
+import com.gropp.dominio.Bootcamp;
 import com.gropp.dominio.Curso;
+import com.gropp.dominio.Dev;
 import com.gropp.dominio.Mentoria;
 import java.time.LocalDate;
 
@@ -59,16 +61,70 @@ public class Main {
         mentoria3.setData(LocalDate.now());
 
         /*
+        * Criamos o bootcamp
+        * adicionamos os cursos
+        * adicionomas as mentorias
+        */
+        Bootcamp bootcampJava = new Bootcamp();
+        bootcampJava.setNome("Bootcamp Java Developer");
+        bootcampJava.setDescricao("Programação Java Orientado a Objeto");
+        bootcampJava.getConteudos().add(curso1);
+        bootcampJava.getConteudos().add(curso2);
+        bootcampJava.getConteudos().add(curso3);
+        bootcampJava.getConteudos().add(mentoria1);
+        bootcampJava.getConteudos().add(mentoria2);
+        bootcampJava.getConteudos().add(mentoria3);
+
+        /*
+        *
+        * Vamos incluir os devs
+        * passando somente os nomes, pois os cursos e mentorias ja estao inclusos no bootcamp
+        * quando os devs se inscreverem nos bootcamps ja receberam eles
+        *
+        */
+
+        Dev dev1 = new Dev();
+        dev1.setNome("Fernando");
+        //inscricao do dev1 no bootcamp Java
+        dev1.inscreverBootcamp(bootcampJava);
+        //progressao no bootcamp
+        //retira o primeiro objeto do conjunto conteudos inscritos
+        //coloca o objeto no conjunto de conteudos concluidos
+        dev1.progredir();
+        dev1.progredir();
+        dev1.progredir();
+        dev1.progredir();
+
+        Dev dev2 = new Dev();
+        dev2.setNome("Camila");
+        //inscricao do dev2 no bootcamp Java
+        dev2.inscreverBootcamp(bootcampJava);
+        //progressao no bootcamp
+        //retira o primeiro objeto do conjunto conteudo inscritos
+        //coloca o objeto no conjunto de conteudos concluidos
+        dev2.progredir();
+        dev2.progredir();
+        dev2.progredir();
+
+        /*
         *
         * impressao dos objetos
         *
         */
 
-        System.out.println(curso1);
+        System.out.println("Conteudos Inscritos:\n"+dev1.getNome()+": "+dev1.getConteudosInscritos());
+        System.out.println("Conteudos Concluidos:\n"+dev1.getNome()+": "+dev1.getConteudosConcluidos());
+        System.out.println("XP's conquistados:\n"+dev1.getNome()+": "+dev1.calcularTotalXp());
+        System.out.println("--------------------------------------------------------");
+        System.out.println("Conteudos Inscritos:\n"+dev2.getNome()+": "+dev2.getConteudosInscritos());
+        System.out.println("Conteudos Concluidos:\n"+dev2.getNome()+": "+dev2.getConteudosConcluidos());
+        System.out.println("XP's conquistados:\n"+dev2.getNome()+": "+dev2.calcularTotalXp());
+
+        /*System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(curso3);
         System.out.println(mentoria1);
         System.out.println(mentoria2);
-        System.out.println(mentoria3);
+        System.out.println(mentoria3);*/
     }
 }
